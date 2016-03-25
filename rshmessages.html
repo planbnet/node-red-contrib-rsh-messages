@@ -1,0 +1,38 @@
+<script type="text/javascript">
+  RED.nodes.registerType('RWE SH',{
+    category: 'function',
+    color: '#a6bbcf',
+    defaults: {
+      name: {value:""},
+    },
+    credentials: {
+      username: {type:"text"},
+      password: {type: "password"}
+    },
+    inputs:1,
+    outputs:1,
+    icon: "envelope.png",
+    label: function() {
+      return this.name||"RWE Smarthome";
+    }
+  });
+</script>
+
+<script type="text/x-red" data-template-name="RWE SH">
+  <div class="form-row">
+  <label for="node-input-username"><i class="fa fa-user"></i> User name</label>
+  <input type="text" id="node-input-username">
+  </div>
+  <div class="form-row">
+  <label for="node-input-password"><i class="fa fa-key"></i> Password</label>
+  <input type="password" id="node-input-password">
+  </div>
+  <div class="form-row">
+  <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+  <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+</script>
+
+<script type="text/x-red" data-help-name="RWE SH">
+  <p>Loading notification messages from the mobile RWE Smarthome web interface and stores them in msg.payload</p>
+</script>
